@@ -24,7 +24,7 @@ public message:string = "";
     this.isAvailable = true;
     // @ts-ignore
     this.user = JSON.parse(localStorage.getItem('userData'));
-    console.log(this.user);
+    // console.log(this.user);
   };
 
   logOut(){

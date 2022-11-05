@@ -41,9 +41,9 @@ import { FooterComponent } from './components/footer/footer.component';
 
   ],
   imports: [
-    CarouselModule,
     BrowserModule,
     HttpClientModule,
+    CarouselModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -61,7 +61,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MatSnackBarModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
