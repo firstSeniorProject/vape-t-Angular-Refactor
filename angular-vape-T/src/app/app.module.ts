@@ -26,6 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 import { OneProductComponent } from './components/one-product/one-product.component';
 import 'tw-elements';
 import { AllProductComponent } from './components/all-product/all-product.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { AllProductComponent } from './components/all-product/all-product.compon
     SignupComponent,
     OneProductComponent,
     AllProductComponent,
+    FooterComponent,
 
   ],
   imports: [
