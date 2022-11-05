@@ -1,6 +1,5 @@
 <div class="container">
   <h1>
-
     {{message}}
   </h1>
 <!-- <div *ngIf="isAvailable; else loggedOut"> -->
@@ -18,6 +17,11 @@
 </div>
 <!-- <app-login [parentData]="name"></app-login> -->
 <app-login (childEvent)="message=$event" ></app-login>
+  <app-header></app-header>
+
+  <router-outlet></router-outlet>
+  
+
 
 
 

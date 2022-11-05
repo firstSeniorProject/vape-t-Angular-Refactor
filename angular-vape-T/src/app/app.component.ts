@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 
 export class AppComponent {
+
  user !: any;
 public  isAvailable:any=true;
 public name = " <h1 >Katkoutou</h1>";
@@ -35,5 +36,7 @@ public message:string = "";
 
   logIn(){
   }
-  
+
+  title = 'Vape-It'
+
 }
