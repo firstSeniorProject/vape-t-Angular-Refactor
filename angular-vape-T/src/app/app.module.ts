@@ -38,8 +38,9 @@ import 'tw-elements';
 
   ],
   imports: [
-    CarouselModule,
     BrowserModule,
+    HttpClientModule,
+    CarouselModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -56,9 +57,7 @@ import 'tw-elements';
     MatBadgeModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
