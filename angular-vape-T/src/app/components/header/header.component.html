@@ -1,4 +1,4 @@
-<mat-toolbar class="justify-between max-w-7xl mx-auto border-x" >
+<mat-toolbar class="justify-between  border-x" >
     <a router-link="home">Vape-It</a>
     <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon
@@ -6,7 +6,9 @@
     matBadgeColor="warn"
     >shopping_cart</mat-icon>
 </button>
+
 <mat-menu #menu="matMenu">
+    
     <div class="p-3 divide-y divide-solid">
         <div class="pb-3 flex justify-between">
             <span class="mr-16">1 items</span>
@@ -36,11 +38,13 @@
             <span class="font-bold">{{'450'| currency }}</span>
         </div>
         <div class="pt-3 flex justify-between">
-            <button class="bg-rose-600 text-white rounded-full w-9 h-9"></button>
 
         </div>
         
+        
 
     </div>
+    
 </mat-menu>
+
 </mat-toolbar>
