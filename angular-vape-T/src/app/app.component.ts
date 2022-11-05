@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -11,10 +13,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
  user !: any;
- isAvailable !: any;
+public  isAvailable:any=true;
+public name = " <h1 >Katkoutou</h1>";
+public message:string = "";
 
- constructor(private router: Router, 
-  ){ }
+
+ constructor(private router: Router,){ }
  
  ngOnInit() {
     this.isAvailable = true;
@@ -24,14 +28,13 @@ export class AppComponent {
   };
 
   logOut(){
-    this.isAvailable = false;
     localStorage.removeItem('userData');
     alert("You are logged out");
-  }
-  logIn(){
-    
+    this.isAvailable = false;
     this.router.navigate(['/login']);
-   
+  }
+
+  logIn(){
   }
 
   title = 'Vape-It'
