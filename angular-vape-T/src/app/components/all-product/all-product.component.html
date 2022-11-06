@@ -1,6 +1,6 @@
 <h1 style="text-align: center">Products</h1>
 <section class="cards">
-    <article class="card card--1" *ngFor="let post of posts">
+    <article class="card card--1" *ngFor="let post of posts" >
   
       <div class="card__info-hover">
         <svg class="card__like"  viewBox="0 0 24 24">
@@ -22,7 +22,7 @@
        <div class="card__info">
         <span class="card__category"> {{post.category}}</span>
         <h3 class="card__title">{{post.nameBrand}}</h3>
-        <span class="card__by">price: <a href="#" class="card__author" title="author">{{post.price}}</a></span>
+        <span class="card__by">price: <a href="#" class="card__author" title="author">{{post.price | currency}}</a></span>
       </div>
   
     </article>
