@@ -1,4 +1,5 @@
 <div class="container">
+  <app-header></app-header>
   <h1>
     {{message}}
   </h1>
@@ -16,8 +17,7 @@
 
 </div>
 <!-- <app-login [parentData]="name"></app-login> -->
-<app-login (childEvent)="message=$event" ></app-login>
-  <app-header></app-header>
+<!-- <app-login (childEvent)="message=$event" ></app-login> -->
 
   <router-outlet></router-outlet>
   

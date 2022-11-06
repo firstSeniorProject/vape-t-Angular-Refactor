@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
      this.user = res;
         localStorage.setItem('userData',JSON.stringify(this.user));
         console.log(res)
-        //alert("Login Up Success");
+        alert("Login Up Success");
       this.loginForm.reset();
      this.router.navigate(['/']);
 
