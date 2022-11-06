@@ -1,15 +1,11 @@
-/** @type {import('tailwindcss').Config} */
+/**@type {import('tailwindcss').Config}*/
 module.exports = {
   content: ['./src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'],
   theme: {
-    extend: {
-      gridTemplateRows: {
-        '[auto,auto,1fr]': 'auto auto 1fr',
-      },
-    },
+    extend: {},
   },
   plugins: [
-    require('tw-elements/dist/plugin','@tailwindcss/aspect-ratio')
+    require('tw-elements/dist/plugin')
   ],
 }
 

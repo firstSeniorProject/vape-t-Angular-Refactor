@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-
+import { Cart } from './models/cart.model';
 
 @Component({
   selector: 'app-root',
@@ -10,31 +9,32 @@ import { FormsModule } from '@angular/forms';
 })
 
 
-export class AppComponent {
-
+export class AppComponent implements OnInit {
+cart:Cart={items:[]};
  user !: any;
-public  isAvailable:any=true;
-public name = " <h1 >Katkoutou</h1>";
-public message:string = "";
+ isAvailable !: any;
 
-
- constructor(private router: Router,){ }
+ constructor(private router: Router, 
+  ){ }
  
  ngOnInit() {
     this.isAvailable = true;
     // @ts-ignore
     this.user = JSON.parse(localStorage.getItem('userData'));
-    // console.log(this.user);
+    console.log(this.user);
+
+    
   };
 
   logOut(){
+    this.isAvailable = false;
     localStorage.removeItem('userData');
     alert("You are logged out");
-    this.isAvailable = false;
-    this.router.navigate(['/login']);
   }
-
   logIn(){
+    
+    this.router.navigate(['/login']);
+   
   }
 
   title = 'Vape-It'

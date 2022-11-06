@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,8 +26,10 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { OneProductComponent } from './components/one-product/one-product.component';
 import 'tw-elements';
-import { AllProductComponent } from './components/all-product/all-product.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { CartService } from './services/cart.service';
+import { CartComponent } from './components/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,14 +39,13 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     SignupComponent,
     OneProductComponent,
-    AllProductComponent,
-    FooterComponent,
-
+    AboutComponent,
+    ContactComponent,
+    CartComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
     CarouselModule,
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -61,10 +63,10 @@ import { FooterComponent } from './components/footer/footer.component';
     MatSnackBarModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
 
-    
   ],
-  providers: [],
+  providers: [CartService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
