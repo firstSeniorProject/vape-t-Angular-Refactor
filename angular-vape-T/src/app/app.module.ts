@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { CarouselModule } from '@coreui/angular';
+// import { CarouselModule } from '@coreui/angular';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -20,6 +20,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductsHeaderComponent } from './pages/home/components/products-header/products-header.component';
+import { FiltersComponent } from './pages/home/components/filters/filters.component';
+import { ProductBoxComponent } from './pages/home/components/product-box/product-box.component';
+
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -34,6 +38,11 @@ import { CartComponent } from './components/cart/cart.component';
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
+    ProductsHeaderComponent,
+    FiltersComponent,
+    ProductBoxComponent,
+    CartComponent,
     LoginComponent,
     SignupComponent,
     HomeComponent,
@@ -44,8 +53,10 @@ import { CartComponent } from './components/cart/cart.component';
     CartComponent
   ],
   imports: [
-    CarouselModule,
     BrowserModule,
+    BrowserModule,
+    HttpClientModule,
+    // CarouselModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,

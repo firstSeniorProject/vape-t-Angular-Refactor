@@ -1,12 +1,24 @@
-import { Component, OnInit, } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Cart } from './models/cart.model';
+import { CartService } from './services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+// export class AppComponent implements OnInit {
+//   cart: Cart = { items:[] };
+//   constructor( private CartService: CartService
+//     ){ }
+
+//     ngOnInit(){
+//       this.CartService.cart.subscribe((_cart) => {
+//         this.cart=_cart;
+//       })
+
+//     }
 
 
 export class AppComponent implements OnInit {
@@ -14,8 +26,8 @@ cart:Cart={items:[]};
  user !: any;
  isAvailable !: any;
 
- constructor(private router: Router, 
-  ){ }
+
+ constructor(private router: Router,private CartService: CartService){ }
  
  ngOnInit() {
     this.isAvailable = true;
@@ -36,7 +48,13 @@ cart:Cart={items:[]};
     this.router.navigate(['/login']);
    
   }
+  cartSer(){
+    this.CartService.cart.subscribe((_cart) => {
+      this.cart=_cart;
+    })
+  }
 
   title = 'Vape-It'
 
 }
+
