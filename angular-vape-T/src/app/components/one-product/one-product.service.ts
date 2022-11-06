@@ -6,12 +6,13 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class OneProductService {
-private url='http:127.0.0.1:3000/product/'
+private url='http://127.0.0.1:3000/product/'
+
   constructor(private http:HttpClient) { }
 
 
   getProduct(){
-    return this.http.get(this.url)
+    return this.http.get<any>(this.url)
 
   }
 
