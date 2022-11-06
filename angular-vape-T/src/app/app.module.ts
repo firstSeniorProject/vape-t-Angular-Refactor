@@ -25,6 +25,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { OneProductComponent } from './components/one-product/one-product.component';
 import 'tw-elements';
+import { AllProductComponent } from './components/all-product/all-product.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,13 +36,16 @@ import 'tw-elements';
     SignupComponent,
     HomeComponent,
     SignupComponent,
-    OneProductComponent
+    OneProductComponent,
+    AllProductComponent,
+    FooterComponent,
+    ProfileComponent,
 
   ],
   imports: [
-    CarouselModule,
     BrowserModule,
     HttpClientModule,
+    CarouselModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -57,7 +63,8 @@ import 'tw-elements';
     MatSnackBarModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

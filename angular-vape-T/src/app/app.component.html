@@ -1,25 +1,19 @@
 <div class="container">
-  <app-header></app-header>
-  <h1>
-    {{message}}
-  </h1>
-<!-- <div *ngIf="isAvailable; else loggedOut"> -->
-<div *ngIf="isAvailable">
-  <h1 >{{ user.email }}</h1>
-  <h1 >{{ user.name}}</h1>
-  <button  (click)="logOut()">log out</button>
-</div>
-<ng-template #loggedOut>
-  <button   (click)="logIn()">log In</button>
-</ng-template>
 
+<app-header></app-header>
+<!-- <app-profile></app-profile>  -->
 <router-outlet></router-outlet>
+<app-footer ></app-footer>
 
 </div>
-<!-- <app-login [parentData]="name"></app-login> -->
-<!-- <app-login (childEvent)="message=$event" ></app-login> -->
 
-  <router-outlet></router-outlet>
+
+
+
+
+  
+
+
   
 
 

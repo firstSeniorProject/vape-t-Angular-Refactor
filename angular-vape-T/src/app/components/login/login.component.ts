@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   public loginForm !: FormGroup;
   // emailvalue!: string;
    user !: any;
+   public  isLoggedIn:any=false;
+
  
   @Input() public parentData:any;
   @Output() public childEvent:any = new EventEmitter();
@@ -40,6 +42,8 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('userData',JSON.stringify(this.user));
         console.log(res)
         alert("Login Up Success");
+        this.isLoggedIn = true;
+        console.log(this.isLoggedIn, "In");
       this.loginForm.reset();
      this.router.navigate(['/']);
 
