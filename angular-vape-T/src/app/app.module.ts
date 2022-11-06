@@ -27,6 +27,7 @@ import { OneProductComponent } from './components/one-product/one-product.compon
 import 'tw-elements';
 import { AllProductComponent } from './components/all-product/all-product.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { FooterComponent } from './components/footer/footer.component';
     OneProductComponent,
     AllProductComponent,
     FooterComponent,
+    ProfileComponent,
 
   ],
   imports: [

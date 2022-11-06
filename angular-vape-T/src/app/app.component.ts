@@ -12,8 +12,6 @@ import { FormsModule } from '@angular/forms';
 
 export class AppComponent {
 
- user !: any;
-public  isAvailable:any=true;
 public name = " <h1 >Katkoutou</h1>";
 public message:string = "";
 
@@ -21,21 +19,9 @@ public message:string = "";
  constructor(private router: Router,){ }
  
  ngOnInit() {
-    this.isAvailable = true;
-    // @ts-ignore
-    this.user = JSON.parse(localStorage.getItem('userData'));
-    // console.log(this.user);
   };
 
-  logOut(){
-    localStorage.removeItem('userData');
-    alert("You are logged out");
-    this.isAvailable = false;
-    this.router.navigate(['/login']);
-  }
 
-  logIn(){
-  }
 
   title = 'Vape-It'
 
