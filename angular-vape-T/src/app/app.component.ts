@@ -20,22 +20,19 @@ import { Router } from '@angular/router';
 
 //     }
 
-
 export class AppComponent implements OnInit {
 cart:Cart={items:[]};
  user !: any;
  isAvailable !: any;
-
-
+public name = " <h1 >Katkoutou</h1>";
+public message:string = "";
  constructor(private router: Router,private CartService: CartService){ }
  
  ngOnInit() {
-    this.isAvailable = true;
+  this.isAvailable = true;
     // @ts-ignore
     this.user = JSON.parse(localStorage.getItem('userData'));
-    console.log(this.user);
-
-    
+    console.log(this.user);   
   };
 
   logOut(){
@@ -53,6 +50,8 @@ cart:Cart={items:[]};
       this.cart=_cart;
     })
   }
+
+  };
 
   title = 'Vape-It'
 

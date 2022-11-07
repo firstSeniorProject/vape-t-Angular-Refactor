@@ -18,9 +18,20 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public loginForm !: FormGroup;
+
   emailvalue!: string;
   user !: any;
   
+
+  // emailvalue!: string;
+   user !: any;
+   public  isLoggedIn:any=false;
+
+ 
+  @Input() public parentData:any;
+  @Output() public childEvent:any = new EventEmitter();
+
+
   constructor(private router: Router, 
               private http: HttpClient,
              // private service:ConfigService,
@@ -53,7 +64,9 @@ export class LoginComponent implements OnInit {
      this.user = res;
         localStorage.setItem('userData',JSON.stringify(this.user));
         console.log(res)
-        //alert("Login Up Success");
+        alert("Login Up Success");
+        this.isLoggedIn = true;
+        console.log(this.isLoggedIn, "In");
       this.loginForm.reset();
      this.router.navigate(['/']);
     // }
