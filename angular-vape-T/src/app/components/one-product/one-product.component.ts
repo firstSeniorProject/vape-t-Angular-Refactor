@@ -10,15 +10,12 @@ export class OneProductComponent implements OnInit {
 product:any
   constructor(private service :OneProductService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.service.getProduct()
-    .subscribe((response)=>{
-     this.product=response
-    //  console.log(this.product,'theprod');
-     
-    //   console.log(response)
-
-    })
+    .subscribe(response=>{this.product=response
+      console.log(response)
+    console.log(this.product,'the prod')}
+      )
     
   }
 

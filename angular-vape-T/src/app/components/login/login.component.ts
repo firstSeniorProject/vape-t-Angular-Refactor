@@ -1,8 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { HttpClient } from '@angular/common/http';
+//import { ConfigService } from './signup.service';
+
+//import { HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-login',
@@ -13,6 +18,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public loginForm !: FormGroup;
+
+  emailvalue!: string;
+  user !: any;
+  
+
   // emailvalue!: string;
    user !: any;
    public  isLoggedIn:any=false;
@@ -21,8 +31,10 @@ export class LoginComponent implements OnInit {
   @Input() public parentData:any;
   @Output() public childEvent:any = new EventEmitter();
 
+
   constructor(private router: Router, 
-            private http: HttpClient,
+              private http: HttpClient,
+             // private service:ConfigService,
               private formBuilder:FormBuilder,){ }
 
   ngOnInit() {
@@ -34,10 +46,21 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  // login(){
+  //   console.log(this.loginForm.value)
+  //   this.http.post<any>("http://localhost:3000/api/users/login", this.loginForm.value)
+  //   .subscribe(res => {
+  //     alert("Login Up Success");
+  //     this.loginForm.reset();
+  //     this.router.navigate(['/']);
+  // }, err => {alert("Error: Something went wrong " + err.message)})
+  // }
+
   login(){
     console.log(this.loginForm.value)
-    this.http.post<any>("http://localhost:3000/api/users/login", this.loginForm.value )
+    this.http.post<any>("http://localhost:3000/api/users/login", this.loginForm.value)
     .subscribe(res => {
+   //  if(res){
      this.user = res;
         localStorage.setItem('userData',JSON.stringify(this.user));
         console.log(res)
@@ -46,19 +69,10 @@ export class LoginComponent implements OnInit {
         console.log(this.isLoggedIn, "In");
       this.loginForm.reset();
      this.router.navigate(['/']);
+    // }
+
 
   }, err => {alert("Error: Something went wrong " + err.message)})
-  }
-
-
-
-
- 
-
-
-
-  fireEvent(){
-    this.childEvent.emit("Hey Hey");
   }
 
  
