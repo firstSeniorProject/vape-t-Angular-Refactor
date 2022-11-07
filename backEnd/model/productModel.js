@@ -6,6 +6,8 @@ module.exports={
         price:{type:Number},
         description:{type:String},
         imgSrc:{type:String},
+        imgSrc2:{type:String},
+        imgSrc3:{type:String},
         category:{type:String,required:true}
 
     })
